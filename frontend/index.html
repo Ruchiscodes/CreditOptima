@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CreditOptima · Risk Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header><a class="brand" href="/"><span>CO</span>CreditOptima</a><div class="status"><i></i> MODEL ONLINE</div></header>
+  <main>
+    <section class="hero"><p class="eyebrow">UNDERWRITING INTELLIGENCE / 01</p><h1>Decisions with<br><em>reason built in.</em></h1><p>Explainable credit risk assessment, calibrated for responsible lending.</p></section>
+    <section class="workspace">
+      <form id="risk-form">
+        <div class="section-title"><span>01</span><div><h2>Applicant profile</h2><p>Enter the applicant’s current financial position.</p></div></div>
+        <div class="grid">
+          <label>Monthly income <small>USD</small><input name="MonthlyIncome" type="number" min="0" value="5200"></label>
+          <label>Age <small>YEARS</small><input name="age" type="number" min="18" max="120" value="42" required></label>
+          <label>Revolving utilization <small>RATIO</small><input name="RevolvingUtilizationOfUnsecuredLines" type="number" min="0" step="0.01" value="0.82" required></label>
+          <label>Debt ratio <small>RATIO</small><input name="DebtRatio" type="number" min="0" step="0.01" value="0.47" required></label>
+          <label>Open credit lines <small>COUNT</small><input name="NumberOfOpenCreditLinesAndLoans" type="number" min="0" value="8" required></label>
+          <label>Real estate loans <small>COUNT</small><input name="NumberRealEstateLoansOrLines" type="number" min="0" value="1" required></label>
+          <label>Dependents <small>COUNT</small><input name="NumberOfDependents" type="number" min="0" value="2"></label>
+        </div>
+        <div class="section-title compact"><span>02</span><div><h2>Payment history</h2><p>Past-due events by severity.</p></div></div>
+        <div class="grid thirds">
+          <label>30–59 days late<input name="NumberOfTime30-59DaysPastDueNotWorse" type="number" min="0" value="1" required></label>
+          <label>60–89 days late<input name="NumberOfTime60-89DaysPastDueNotWorse" type="number" min="0" value="0" required></label>
+          <label>90+ days late<input name="NumberOfTimes90DaysLate" type="number" min="0" value="0" required></label>
+        </div>
+        <button type="submit">Run risk assessment <b>→</b></button>
+      </form>
+      <aside id="result" aria-live="polite">
+        <p class="eyebrow">ASSESSMENT / LIVE</p><div class="empty"><div class="orb"></div><h3>Awaiting applicant data</h3><p>Your explainable risk decision will appear here.</p></div>
+      </aside>
+    </section>
+  </main>
+  <footer><span>CreditOptima / v1.0</span><span>GOVERNED · EXPLAINABLE · FAST</span><a href="/docs">API DOCS ↗</a></footer>
+  <script src="/static/app.js"></script>
+</body></html>
+

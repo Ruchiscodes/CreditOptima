@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+pytest-cache-files-*/
+.ruff_cache/
+.venv/
+venv/
+.env
+data/raw/*.csv
+data/processed/*.csv
+artifacts/*.joblib
+artifacts/*.json
+artifacts/*.csv
+!artifacts/.gitkeep
